@@ -18,6 +18,9 @@ import RTL from "views/admin/rtl";
 
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
+import Reports from "./views/admin/Reports";
+import UserTable from "./views/admin/User/components/UserTable";
+import User from "./views/admin/User";
 
 const routes = [
   {
@@ -27,41 +30,41 @@ const routes = [
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
+  // {
+  //   name: "NFT Marketplace",
+  //   layout: "/admin",
+  //   path: "/nft-marketplace",
+  //   icon: (
+  //     <Icon
+  //       as={MdOutlineShoppingCart}
+  //       width='20px'
+  //       height='20px'
+  //       color='inherit'
+  //     />
+  //   ),
+  //   component: NFTMarketplace,
+  //   secondary: true,
+  // },
   {
-    name: "NFT Marketplace",
-    layout: "/admin",
-    path: "/nft-marketplace",
-    icon: (
-      <Icon
-        as={MdOutlineShoppingCart}
-        width='20px'
-        height='20px'
-        color='inherit'
-      />
-    ),
-    component: NFTMarketplace,
-    secondary: true,
-  },
-  {
-    name: "Data Tables",
+    name: "Reports",
     layout: "/admin",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
+    path: "/reports",
+    component: Reports,
+  },
+  {
+    name: "Tour",
+    layout: "/admin",
+    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    path: "/tours",
     component: DataTables,
   },
   {
-    name: "Data Tables",
+    name: "User",
     layout: "/admin",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
-    component: DataTables,
-  },
-  {
-    name: "Data Tables",
-    layout: "/admin",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
-    component: DataTables,
+    path: "/users",
+    component: User,
   },
   {
     name: "Profile",
@@ -70,13 +73,13 @@ const routes = [
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Profile,
   },
-  {
-    name: "Sign In",
-    layout: "/auth",
-    path: "/sign-in",
-    icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
-    component: SignInCentered,
-  },
+  // {
+  //   name: "Sign In",
+  //   layout: "/auth",
+  //   path: "/sign-in",
+  //   icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
+  //   component: SignInCentered,
+  // },
 ];
 
 export default routes;

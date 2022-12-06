@@ -19,13 +19,16 @@ import { ItemContent } from "components/menu/ItemContent";
 import { SearchBar } from "components/navbar/searchBar/SearchBar";
 import { SidebarResponsive } from "components/sidebar/Sidebar";
 import PropTypes from "prop-types";
-import React from "react";
+import React, {useEffect} from "react";
 // Assets
 import navImage from "assets/img/layout/Navbar.png";
 import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
 import { FaEthereum } from "react-icons/fa";
 import routes from "routes.js";
 import { ThemeEditor } from "./ThemeEditor";
+import {useDispatch, useSelector} from "react-redux";
+import {signOut} from "../../redux/authSlice";
+import {useHistory} from "react-router-dom";
 export default function HeaderLinks(props) {
   const { secondary } = props;
   // Chakra Color Mode
@@ -41,7 +44,19 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.18)",
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
   );
-  const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+
+  const handleLogout = () => {
+    const action = signOut();
+    dispatch(action)
+    // history.push('/auth/sign-in');
+    if (!localStorage.getItem('access_token')) {
+      history.push('/auth/sign-in')
+    }
+  }
+
   return (
     <Flex
       w={{ sm: "100%", md: "auto" }}
@@ -130,7 +145,7 @@ export default function HeaderLinks(props) {
               px='0'
               borderRadius='8px'
               mb='10px'>
-              <ItemContent info='Horizon UI Dashboard PRO' aName='Alicia' />
+              <ItemContent info='Thông báo' aName='1' />
             </MenuItem>
             <MenuItem
               _hover={{ bg: "none" }}
@@ -139,79 +154,78 @@ export default function HeaderLinks(props) {
               borderRadius='8px'
               mb='10px'>
               <ItemContent
-                info='Horizon Design System Free'
-                aName='Josh Henry'
+                info='Thông báo'
+                aName='2'
               />
             </MenuItem>
           </Flex>
         </MenuList>
       </Menu>
 
-      <Menu>
-        <MenuButton p='0px'>
-          <Icon
-            mt='6px'
-            as={MdInfoOutline}
-            color={navbarIcon}
-            w='18px'
-            h='18px'
-            me='10px'
-          />
-        </MenuButton>
-        <MenuList
-          boxShadow={shadow}
-          p='20px'
-          me={{ base: "30px", md: "unset" }}
-          borderRadius='20px'
-          bg={menuBg}
-          border='none'
-          mt='22px'
-          minW={{ base: "unset" }}
-          maxW={{ base: "360px", md: "unset" }}>
-          <Image src={navImage} borderRadius='16px' mb='28px' />
-          <Flex flexDirection='column'>
-            <Link w='100%' href='https://horizon-ui.com/pro'>
-              <Button w='100%' h='44px' mb='10px' variant='brand'>
-                Buy Horizon UI PRO
-              </Button>
-            </Link>
-            <Link
-              w='100%'
-              href='https://horizon-ui.com/documentation/docs/introduction'>
-              <Button
-                w='100%'
-                h='44px'
-                mb='10px'
-                border='1px solid'
-                bg='transparent'
-                borderColor={borderButton}>
-                See Documentation
-              </Button>
-            </Link>
-            <Link
-              w='100%'
-              href='https://github.com/horizon-ui/horizon-ui-chakra'>
-              <Button
-                w='100%'
-                h='44px'
-                variant='no-hover'
-                color={textColor}
-                bg='transparent'>
-                Try Horizon Free
-              </Button>
-            </Link>
-          </Flex>
-        </MenuList>
-      </Menu>
+      {/*<Menu>*/}
+      {/*  <MenuButton p='0px'>*/}
+      {/*    <Icon*/}
+      {/*      mt='6px'*/}
+      {/*      as={MdInfoOutline}*/}
+      {/*      color={navbarIcon}*/}
+      {/*      w='18px'*/}
+      {/*      h='18px'*/}
+      {/*      me='10px'*/}
+      {/*    />*/}
+      {/*  </MenuButton>*/}
+      {/*  <MenuList*/}
+      {/*    boxShadow={shadow}*/}
+      {/*    p='20px'*/}
+      {/*    me={{ base: "30px", md: "unset" }}*/}
+      {/*    borderRadius='20px'*/}
+      {/*    bg={menuBg}*/}
+      {/*    border='none'*/}
+      {/*    mt='22px'*/}
+      {/*    minW={{ base: "unset" }}*/}
+      {/*    maxW={{ base: "360px", md: "unset" }}>*/}
+      {/*    <Image src={navImage} borderRadius='16px' mb='28px' />*/}
+      {/*    <Flex flexDirection='column'>*/}
+      {/*      <Link w='100%' href='https://horizon-ui.com/pro'>*/}
+      {/*        <Button w='100%' h='44px' mb='10px' variant='brand'>*/}
+      {/*          Buy Horizon UI PRO*/}
+      {/*        </Button>*/}
+      {/*      </Link>*/}
+      {/*      <Link*/}
+      {/*        w='100%'*/}
+      {/*        href='https://horizon-ui.com/documentation/docs/introduction'>*/}
+      {/*        <Button*/}
+      {/*          w='100%'*/}
+      {/*          h='44px'*/}
+      {/*          mb='10px'*/}
+      {/*          border='1px solid'*/}
+      {/*          bg='transparent'*/}
+      {/*          borderColor={borderButton}>*/}
+      {/*          See Documentation*/}
+      {/*        </Button>*/}
+      {/*      </Link>*/}
+      {/*      <Link*/}
+      {/*        w='100%'*/}
+      {/*        href='https://github.com/horizon-ui/horizon-ui-chakra'>*/}
+      {/*        <Button*/}
+      {/*          w='100%'*/}
+      {/*          h='44px'*/}
+      {/*          variant='no-hover'*/}
+      {/*          color={textColor}*/}
+      {/*          bg='transparent'>*/}
+      {/*          Try Horizon Free*/}
+      {/*        </Button>*/}
+      {/*      </Link>*/}
+      {/*    </Flex>*/}
+      {/*  </MenuList>*/}
+      {/*</Menu>*/}
 
-      <ThemeEditor navbarIcon={navbarIcon} /> 
+      {/*<ThemeEditor navbarIcon={navbarIcon} />*/}
 
       <Menu>
         <MenuButton p='0px'>
           <Avatar
             _hover={{ cursor: "pointer" }}
             color='white'
-            name='Adela Parkson'
             bg='#11047A'
             size='sm'
             w='40px'
@@ -225,42 +239,42 @@ export default function HeaderLinks(props) {
           borderRadius='20px'
           bg={menuBg}
           border='none'>
-          <Flex w='100%' mb='0px'>
-            <Text
-              ps='20px'
-              pt='16px'
-              pb='10px'
-              w='100%'
-              borderBottom='1px solid'
-              borderColor={borderColor}
-              fontSize='sm'
-              fontWeight='700'
-              color={textColor}>
-              👋&nbsp; Hey, Adela
-            </Text>
-          </Flex>
+          {/*<Flex w='100%' mb='0px'>*/}
+          {/*  <Text*/}
+          {/*    ps='20px'*/}
+          {/*    pt='16px'*/}
+          {/*    pb='10px'*/}
+          {/*    w='100%'*/}
+          {/*    borderBottom='1px solid'*/}
+          {/*    borderColor={borderColor}*/}
+          {/*    fontSize='sm'*/}
+          {/*    fontWeight='700'*/}
+          {/*    color={textColor}>*/}
+          {/*    👋&nbsp; Hey, Adela*/}
+          {/*  </Text>*/}
+          {/*</Flex>*/}
           <Flex flexDirection='column' p='10px'>
             <MenuItem
               _hover={{ bg: "none" }}
               _focus={{ bg: "none" }}
               borderRadius='8px'
               px='14px'>
-              <Text fontSize='sm'>Profile Settings</Text>
+              <Text fontSize='sm'>Cài đặt hồ sơ</Text>
             </MenuItem>
+            {/*<MenuItem*/}
+            {/*  _hover={{ bg: "none" }}*/}
+            {/*  _focus={{ bg: "none" }}*/}
+            {/*  borderRadius='8px'*/}
+            {/*  px='14px'>*/}
+            {/*  <Text fontSize='sm'>Newsletter Settings</Text>*/}
+            {/*</MenuItem>*/}
             <MenuItem
-              _hover={{ bg: "none" }}
-              _focus={{ bg: "none" }}
-              borderRadius='8px'
-              px='14px'>
-              <Text fontSize='sm'>Newsletter Settings</Text>
-            </MenuItem>
-            <MenuItem
-              _hover={{ bg: "none" }}
+              _hover={{ bg: "none" , cursor: "pointer"}}
               _focus={{ bg: "none" }}
               color='red.400'
               borderRadius='8px'
               px='14px'>
-              <Text fontSize='sm'>Log out</Text>
+              <Text fontSize='sm' onClick={handleLogout}>Đăng xuất</Text>
             </MenuItem>
           </Flex>
         </MenuList>

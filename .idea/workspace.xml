@@ -6,20 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/FooterAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/FooterAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/FooterAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/FooterAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavbarAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/ItemContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/ItemContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarLinksAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavbarLinksAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/auth/Default.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/auth/Default.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/default/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/marketplace/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/profile/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/rtl/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/variables/tableDataDevelopment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/variables/tableDataDevelopment.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/auth/signIn/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/auth/signIn/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +66,7 @@
       <workItem from="1670042994712" duration="4738000" />
       <workItem from="1670205370597" duration="2401000" />
       <workItem from="1670307929131" duration="404000" />
-      <workItem from="1670308343199" duration="4399000" />
+      <workItem from="1670308343199" duration="21491000" />
     </task>
     <servers />
   </component>
