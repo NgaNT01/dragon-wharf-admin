@@ -23,7 +23,7 @@ const routes = [
   {
     name: "Main Dashboard",
     layout: "/admin",
-    path: "/default",
+    path: "/dashboard",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
@@ -50,6 +50,20 @@ const routes = [
     component: DataTables,
   },
   {
+    name: "Data Tables",
+    layout: "/admin",
+    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    path: "/data-tables",
+    component: DataTables,
+  },
+  {
+    name: "Data Tables",
+    layout: "/admin",
+    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    path: "/data-tables",
+    component: DataTables,
+  },
+  {
     name: "Profile",
     layout: "/admin",
     path: "/profile",
@@ -62,13 +76,6 @@ const routes = [
     path: "/sign-in",
     icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
     component: SignInCentered,
-  },
-  {
-    name: "RTL Admin",
-    layout: "/rtl",
-    path: "/rtl-default",
-    icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
-    component: RTL,
   },
 ];
 
