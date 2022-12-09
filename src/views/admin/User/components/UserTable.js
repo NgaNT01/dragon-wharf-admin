@@ -13,7 +13,7 @@ import {
 // Custom components
 import Card from "components/card/Card";
 import Menu from "components/menu/MainMenu";
-import React, { useMemo } from "react";
+import React, {useMemo, useState} from "react";
 import {
     useGlobalFilter,
     usePagination,
@@ -25,6 +25,7 @@ import moment from "moment";
 
 export default function UserTable(props) {
     const { columnsData, tableData } = props;
+    const [currentId, setCurrentId] = useState(null);
 
     const columns = useMemo(() => columnsData, [columnsData]);
     const data = useMemo(() => tableData, [tableData]);
@@ -54,7 +55,8 @@ export default function UserTable(props) {
     const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
 
     const handleClickToDetail = (data) => {
-        alert(data)
+        setCurrentId(data);
+        
     }
 
     return (
@@ -139,8 +141,7 @@ export default function UserTable(props) {
                                             // <Text color={textColor} fontSize='sm' fontWeight='700'>
                                             //     {cell.value}
                                             // </Text>
-                                            // <div onClick={handleClickToDetail(cell)}><ArrowRightIcon ></ArrowRightIcon></div>
-                                            <span></span>
+                                            <ArrowRightIcon cursor="pointer" onClick={() => handleClickToDetail(cell.row.allCells[0].value)}></ArrowRightIcon>
                                         );
                                     }
                                     return (
