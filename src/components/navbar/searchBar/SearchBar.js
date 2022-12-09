@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   IconButton,
   Input,
@@ -7,6 +7,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
+import {useDispatch} from "react-redux";
+import {findUser} from "../../../redux/authSlice";
 export function SearchBar(props) {
   // Pass the computed styles into the `__css` prop
   const { variant, background, children, placeholder, borderRadius, ...rest } =
@@ -15,6 +17,17 @@ export function SearchBar(props) {
   const searchIconColor = useColorModeValue("gray.700", "white");
   const inputBg = useColorModeValue("secondaryGray.300", "navy.900");
   const inputText = useColorModeValue("gray.700", "gray.100");
+  const [inputSearch,setInputSearch] = useState('');
+  const dispatch = useDispatch();
+
+  const handleChangeInput = (e) => {
+      console.log(e.target.value);
+      if (e.target.value === '') dispatch(findUser('a'));
+      else dispatch(findUser(e.target.value));
+      setInputSearch(e.target.value);
+
+  }
+
   return (
     <InputGroup w={{ base: "100%", md: "200px" }} {...rest}>
       <InputLeftElement
@@ -45,6 +58,8 @@ export function SearchBar(props) {
         _placeholder={{ color: "gray.400", fontSize: "14px" }}
         borderRadius={borderRadius ? borderRadius : "30px"}
         placeholder={placeholder ? placeholder : "Tìm kiếm..."}
+        value={inputSearch}
+        onChange={handleChangeInput}
       />
     </InputGroup>
   );

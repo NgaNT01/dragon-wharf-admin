@@ -79,7 +79,7 @@ export default function UserTable(props) {
                     fontSize='22px'
                     fontWeight='700'
                     lineHeight='100%'>
-                    Reports
+                    Users Table
                 </Text>
                 <Menu />
             </Flex>

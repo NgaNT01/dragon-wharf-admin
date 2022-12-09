@@ -5,6 +5,10 @@ const reportsApi = {
         const url = '/report';
         return axiosClient.get(url);
     },
+    findReports: (params) => {
+        const url = `/report/search?q=${params}`;
+        return axiosClient.get(url);
+    }
 
 }
 

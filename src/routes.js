@@ -43,7 +43,7 @@ const routes = [
   {
     name: "User",
     layout: "/admin",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     path: "/users",
     component: User,
   },
@@ -51,13 +51,6 @@ const routes = [
     layout: "/admin",
     path: "/users/:userId",
     component: UserDetails,
-  },
-  {
-    name: "Profile",
-    layout: "/admin",
-    path: "/profile",
-    icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
-    component: Profile,
   },
   {
     layout: "/auth",

@@ -16,28 +16,35 @@ export default function User() {
     const dispatch = useDispatch();
     const [listUsers, setListUsers] = useState([]);
     const isLoading = useSelector(state => state.auth.isLoading)
+    const current = useSelector(state => state.auth.current)
 
     useEffect(async () => {
         const result =await dispatch(getListUsers());
         const users = unwrapResult(result);
-        setListUsers(users);
+        // setListUsers(users);
     },[])
+
+    useEffect(() => {
+        setListUsers(current);
+    })
+
     // Chakra Color Mode
     return (
         <Box pt={{ base: "500px", md: "80px", xl: "80px" }}>
-            <UserTable
-                columnsData={columnsDataUser}
-                tableData={listUsers}
-            />
+
             {/*<UsersTable data={listUsers}></UsersTable>*/}
-            {isLoading === true && <Spinner thickness='4px'
+            {isLoading === true ? <Spinner thickness='4px'
                                             speed='0.85s'
                                             emptyColor='gray.200'
                                             color='blue.500'
                                             size='xl'
                                             position="absolute"
                                             right="800px"
-            ></Spinner>}
+                                            top="300px"
+            ></Spinner> : <UserTable
+                columnsData={columnsDataUser}
+                tableData={listUsers}
+            />}
         </Box>
     );
 }

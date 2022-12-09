@@ -23,6 +23,12 @@ export const getUserById = createAsyncThunk('auth/getUserById',async (payload, t
     console.log("user",response.data.data);
     return response.data.data;
 });
+
+export const findUser = createAsyncThunk('auth/findUser',async (payload, thunkAPI) => {
+    const response = await userApi.findUser(payload);
+    console.log("find user",response.data.data);
+    return response.data.data;
+});
 // ---------------------
 //      MAIN SLICE
 // ---------------------
@@ -30,6 +36,7 @@ export const getUserById = createAsyncThunk('auth/getUserById',async (payload, t
 const initialState = {
     isLoggedIn: false,
     isLoading: false,
+    inputSearch: '',
     current: {},
     currentUser: {}
 }
@@ -49,6 +56,7 @@ const authSlice = createSlice({
     },
     extraReducers: {
         [signIn.pending.type]: (state) => {
+            state.currentUser = {};
             state.isLoading = true;
         },
         [signIn.fulfilled.type]: (state, payload) => {
@@ -79,6 +87,16 @@ const authSlice = createSlice({
             state.currentUser = action.payload;
         },
         [getUserById.rejected.type]: (state) => {
+            state.isLoading = false;
+        },
+        [findUser.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [findUser.fulfilled.type]: (state,action) => {
+            state.isLoading = false;
+            state.current = action.payload;
+        },
+        [findUser.rejected.type]: (state) => {
             state.isLoading = false;
         }
     },

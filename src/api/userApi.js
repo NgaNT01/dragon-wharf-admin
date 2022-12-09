@@ -13,6 +13,10 @@ const userApi = {
         const url = `/user/profile/${params}`;
         return axiosClient.get(url)
     },
+    findUser: (params) => {
+        const url = `/user/search?q=${params}`;
+        return axiosClient.get(url);
+    }
 }
 
 export default userApi;
