@@ -7,17 +7,33 @@
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/axiosClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/ItemContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/ItemContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarLinksAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavbarLinksAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/reportsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reportsApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/calendar/MiniCalendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavbarAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/components/Links.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/components/Links.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/auth/Default.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/auth/Default.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/auth/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/rtl/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/rtl/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/variables/tableDataDevelopment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/variables/tableDataDevelopment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/auth/signIn/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/auth/signIn/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/components/Banner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/components/HistoryItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/components/TableTopCreators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/variables/tableColumnsTopCreators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/marketplace/variables/tableDataTopCreators.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/CheckTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/ComplexTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/DailyTraffic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/PieCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/Tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/TotalSpent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/UserActivity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/components/WeeklyRevenue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/variables/columnsData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/variables/tableDataCheck.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/rtl/variables/tableDataComplex.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,23 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/Workspace/dragon-wharf-admin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/snap/intellij-idea-ultimate/398/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Workspace/dragon-wharf-admin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/398/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +82,9 @@
       <workItem from="1670042994712" duration="4738000" />
       <workItem from="1670205370597" duration="2401000" />
       <workItem from="1670307929131" duration="404000" />
-      <workItem from="1670308343199" duration="21491000" />
+      <workItem from="1670308343199" duration="21649000" />
+      <workItem from="1670382022849" duration="1032000" />
+      <workItem from="1670503367109" duration="8265000" />
     </task>
     <servers />
   </component>

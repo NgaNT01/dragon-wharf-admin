@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import routes from "routes.js";
+import SignInCentered from "views/auth/signIn";
 
 // Chakra imports
 import { Box, useColorModeValue } from "@chakra-ui/react";
@@ -22,7 +23,7 @@ export default function Auth() {
         return (
           <Route
             path={prop.layout + prop.path}
-            component={prop.component}
+            component={SignInCentered}
             key={key}
           />
         );
@@ -63,8 +64,7 @@ export default function Auth() {
                 {getRoutes(routes)}
                 <Redirect
                   from='/auth'
-                  to='/auth/sign-in/default
-                  '
+                  to='/auth/sign-in'
                 />
               </Switch>
             </Box>

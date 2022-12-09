@@ -204,50 +204,50 @@ export default function AuthNavbar(props) {
       }
     });
   };
-  const createAuthLinks = (routes) => {
-    return routes.map((link, key) => {
-      if (link.collapse === true) {
-        return (
-          <Stack key={key} direction='column' my='auto' maxW='max-content'>
-            <Stack
-              direction='row'
-              spacing='0px'
-              align='center'
-              cursor='default'
-              w='max-content'>
-              <IconBox bg='brand.500' h='30px' w='30px' me='10px'>
-                {link.icon}
-              </IconBox>
-              <Text fontWeight='bold' fontSize='md' me='auto' color={textColor}>
-                {link.name}
-              </Text>
-              <Icon
-                as={GoChevronRight}
-                color={mainText}
-                w='14px'
-                h='14px'
-                fontWeight='2000'
-              />
-            </Stack>
-            <Stack direction='column' bg={menuBg}>
-              {createAuthLinks(link.items)}
-            </Stack>
-          </Stack>
-        );
-      } else {
-        return (
-          <NavLink
-            key={key}
-            to={link.layout + link.path}
-            style={{ maxWidth: "max-content", marginLeft: "40px" }}>
-            <Text color='gray.400' fontSize='sm' fontWeight='normal'>
-              {link.name}
-            </Text>
-          </NavLink>
-        );
-      }
-    });
-  };
+  // const createAuthLinks = (routes) => {
+  //   return routes.map((link, key) => {
+  //     if (link.collapse === true) {
+  //       return (
+  //         <Stack key={key} direction='column' my='auto' maxW='max-content'>
+  //           <Stack
+  //             direction='row'
+  //             spacing='0px'
+  //             align='center'
+  //             cursor='default'
+  //             w='max-content'>
+  //             <IconBox bg='brand.500' h='30px' w='30px' me='10px'>
+  //               {link.icon}
+  //             </IconBox>
+  //             <Text fontWeight='bold' fontSize='md' me='auto' color={textColor}>
+  //               {link.name}
+  //             </Text>
+  //             <Icon
+  //               as={GoChevronRight}
+  //               color={mainText}
+  //               w='14px'
+  //               h='14px'
+  //               fontWeight='2000'
+  //             />
+  //           </Stack>
+  //           <Stack direction='column' bg={menuBg}>
+  //             {createAuthLinks(link.items)}
+  //           </Stack>
+  //         </Stack>
+  //       );
+  //     } else {
+  //       return (
+  //         <NavLink
+  //           key={key}
+  //           to={link.layout + link.path}
+  //           style={{ maxWidth: "max-content", marginLeft: "40px" }}>
+  //           <Text color='gray.400' fontSize='sm' fontWeight='normal'>
+  //             {link.name}
+  //           </Text>
+  //         </NavLink>
+  //       );
+  //     }
+  //   });
+  // };
   const linksAuth = (
     <HStack display={{ sm: "none", lg: "flex" }} spacing='12px'>
       <Stack
