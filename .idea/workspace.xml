@@ -6,19 +6,47 @@
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/axiosClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/reportsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reportsApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charts/BarChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charts/LineAreaChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charts/LineChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charts/PieChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dataDispaly/TimelineRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fields/InputField.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fields/SwitchField.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/FooterAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/FooterAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rtlProvider/RtlProvider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/rtl/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reportsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reportsSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/variables/charts.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/Reports/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Reports/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/Reports/variables/columnsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Reports/variables/columnsData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/CheckTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/ComplexTable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/DailyTraffic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/PieCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/Tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/TotalSpent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/UserActivity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/WeeklyRevenue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/variables/columnsData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/variables/tableDataCheck.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/default/variables/tableDataComplex.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Banner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/General.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Information.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Projects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Storage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/components/Upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/profile/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/profile/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +60,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2I7mdCZgR88SR0da57h7o5QEIdh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -69,7 +100,7 @@
       <workItem from="1670307929131" duration="404000" />
       <workItem from="1670308343199" duration="21649000" />
       <workItem from="1670382022849" duration="1032000" />
-      <workItem from="1670503367109" duration="16175000" />
+      <workItem from="1670503367109" duration="24603000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,7 @@ import User from "./views/admin/User";
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Bảng điều khiển",
     layout: "/admin",
     path: "/dashboard",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,

@@ -1,8 +1,6 @@
 /* eslint-disable */
 import {
-  Button,
   Flex,
-  Progress,
   Table,
   Tbody,
   Td,
@@ -14,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card";
-import { AndroidLogo, AppleLogo, WindowsLogo } from "components/icons/Icons";
 import Menu from "components/menu/MainMenu";
 import React, { useMemo } from "react";
 import {
@@ -23,6 +20,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
+import moment from "moment";
 
 export default function DevelopmentTable(props) {
   const { columnsData, tableData } = props;
@@ -100,40 +98,40 @@ export default function DevelopmentTable(props) {
                   let data = "";
                   if (cell.column.Header === "ID") {
                     data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                      <Text color={textColor} fontSize='md' fontWeight='700'>
                         {cell.value}
                       </Text>
                     );
                   } else if (cell.column.Header === "Email") {
                     data = (
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        <Text color={textColor} fontSize='md' fontWeight='700'>
                           {cell.value}
                         </Text>
                     );
                   } else if (cell.column.Header === "Type") {
                     data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                      <Text color={textColor} fontSize='md' fontWeight='700'>
                         {cell.value}
                       </Text>
                     );
                   } else if (cell.column.Header === "Content") {
                     data = (
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        <Text color={textColor} fontSize='md' fontWeight='700'>
                           {cell.value}
                         </Text>
                     );
                   }
                   else if (cell.column.Header === "Created At") {
                     data = (
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
-                          {cell.value}
+                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                          {moment(cell.value).format('DD/MM/YYYY')}
                         </Text>
                     );
                   }
                   else if (cell.column.Header === "Updated At") {
                     data = (
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
-                          {cell.value}
+                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                          {moment(cell.value).format('DD/MM/YYYY')}
                         </Text>
                     );
                   }

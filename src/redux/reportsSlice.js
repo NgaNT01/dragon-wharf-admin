@@ -6,7 +6,6 @@ export const getListReports = createAsyncThunk(
     'reports/getListReports',
     async (payload, thunkAPI) => {
       const response = await reportsApi.getListReports();
-      console.log("res",response.data.data);
       return response.data.data;
     }
 );

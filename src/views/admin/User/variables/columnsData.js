@@ -19,4 +19,8 @@ export const columnsDataUser = [
         Header: "Date of birth",
         accessor: "dob",
     },
+    {
+        Header: "Detail",
+        accessor: ""
+    }
 ];

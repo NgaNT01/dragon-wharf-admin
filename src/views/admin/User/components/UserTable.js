@@ -1,8 +1,6 @@
 /* eslint-disable */
 import {
-    Button,
-    Flex,
-    Progress,
+    Flex, Icon,
     Table,
     Tbody,
     Td,
@@ -14,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card";
-import { AndroidLogo, AppleLogo, WindowsLogo } from "components/icons/Icons";
 import Menu from "components/menu/MainMenu";
 import React, { useMemo } from "react";
 import {
@@ -23,6 +20,8 @@ import {
     useSortBy,
     useTable,
 } from "react-table";
+import {ArrowRightIcon} from "@chakra-ui/icons";
+import moment from "moment";
 
 export default function UserTable(props) {
     const { columnsData, tableData } = props;
@@ -53,6 +52,11 @@ export default function UserTable(props) {
     const textColor = useColorModeValue("secondaryGray.900", "white");
     const iconColor = useColorModeValue("secondaryGray.500", "white");
     const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
+
+    const handleClickToDetail = (data) => {
+        alert(data)
+    }
+
     return (
         <Card
             direction='column'
@@ -100,36 +104,45 @@ export default function UserTable(props) {
                                     let data = "";
                                     if (cell.column.Header === "ID") {
                                         data = (
-                                            <Text color={textColor} fontSize='sm' fontWeight='700'>
+                                            <Text color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
                                             </Text>
                                         );
                                     } else if (cell.column.Header === "Email") {
                                         data = (
-                                            <Text color={textColor} fontSize='sm' fontWeight='700'>
+                                            <Text color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
                                             </Text>
                                         );
                                     } else if (cell.column.Header === "Name") {
                                         data = (
-                                            <Text color={textColor} fontSize='sm' fontWeight='700'>
+                                            <Text color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
                                             </Text>
                                         );
                                     } else if (cell.column.Header === "Phone") {
                                         data = (
-                                            <Text color={textColor} fontSize='sm' fontWeight='700'>
+                                            <Text color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
                                             </Text>
                                         );
                                     }
-                                else if (cell.column.Header === "Date of birth") {
-                                    data = (
-                                    <Text color={textColor} fontSize='sm' fontWeight='700'>
-                                {cell.value}
-                                    </Text>
-                                    );
-                                }
+                                    else if (cell.column.Header === "Date of birth") {
+                                        data = (
+                                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                                            {moment(cell.value).format('DD/MM/YYYY')}
+                                        </Text>
+                                        );
+                                    }
+                                    else if (cell.column.Header === "Detail") {
+                                        data = (
+                                            // <Text color={textColor} fontSize='sm' fontWeight='700'>
+                                            //     {cell.value}
+                                            // </Text>
+                                            // <div onClick={handleClickToDetail(cell)}><ArrowRightIcon ></ArrowRightIcon></div>
+                                            <span></span>
+                                        );
+                                    }
                                     return (
                                         <Td
                                             {...cell.getCellProps()}
