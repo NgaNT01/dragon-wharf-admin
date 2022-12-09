@@ -123,7 +123,7 @@ export default function UserTable(props) {
                                             </Text>
                                         );
                                     }
-                                else if (cell.column.Header === "Dob") {
+                                else if (cell.column.Header === "Date of birth") {
                                     data = (
                                     <Text color={textColor} fontSize='sm' fontWeight='700'>
                                 {cell.value}

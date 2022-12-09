@@ -16,7 +16,7 @@ export const columnsDataUser = [
         accessor: "phone",
     },
     {
-        Header: "Dob",
+        Header: "Date of birth",
         accessor: "dob",
     },
 ];

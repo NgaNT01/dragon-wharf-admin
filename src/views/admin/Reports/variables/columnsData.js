@@ -14,5 +14,13 @@ export const columnsDataReports = [
     {
         Header: "Content",
         accessor: "content",
+    },
+    {
+        Header: "Created At",
+        accessor: "createdAt",
+    },
+    {
+        Header: "Updated At",
+        accessor: "updatedAt",
     }
 ];

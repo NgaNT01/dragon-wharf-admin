@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 
 const reportsApi = {
-    getListReport: () => {
+    getListReports: () => {
         const url = '/report';
         return axiosClient.get(url);
     },

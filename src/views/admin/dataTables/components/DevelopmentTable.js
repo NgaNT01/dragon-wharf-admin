@@ -123,6 +123,20 @@ export default function DevelopmentTable(props) {
                         </Text>
                     );
                   }
+                  else if (cell.column.Header === "Created At") {
+                    data = (
+                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                          {cell.value}
+                        </Text>
+                    );
+                  }
+                  else if (cell.column.Header === "Updated At") {
+                    data = (
+                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                          {cell.value}
+                        </Text>
+                    );
+                  }
                   return (
                     <Td
                       {...cell.getCellProps()}

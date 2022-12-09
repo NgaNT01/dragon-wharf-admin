@@ -13,14 +13,10 @@ export const signIn = createAsyncThunk(
     }
 );
 
-// export const signOut = createAsyncThunk(
-//     'auth/signOut',
-//     async (payload, thunkAPI) => {
-//         localStorage.removeItem('access_token');
-//     }
-// );
-
-
+export const getListUsers = createAsyncThunk('auth/getListUsers',async () => {
+    const response = await userApi.getListUsers();
+    return response.data.data;
+});
 // ---------------------
 //      MAIN SLICE
 // ---------------------
@@ -58,10 +54,16 @@ const authSlice = createSlice({
         [signIn.rejected.type]: (state) => {
             state.isLoading = false;
         },
-        // [signOut.fulfilled.type]: (state, payload) => {
-        //     state.isLoading = false;
-        //     state.isLoggedIn = false;
-        // },
+        [getListUsers.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [getListUsers.fulfilled.type]: (state,action) => {
+            state.isLoading = false;
+            state.current = action.payload;
+        },
+        [getListUsers.rejected.type]: (state) => {
+            state.isLoading = false;
+        }
     },
 });
 
