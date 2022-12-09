@@ -8,7 +8,11 @@ const userApi = {
     getListUsers: () => {
         const url = '/user/list';
         return axiosClient.get(url);
-    }
+    },
+    getUserById: (params) => {
+        const url = `/user/profile/${params}`;
+        return axiosClient.get(url)
+    },
 }
 
 export default userApi;

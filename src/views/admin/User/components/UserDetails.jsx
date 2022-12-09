@@ -1,16 +1,14 @@
 import React from 'react';
+import {Box} from "@chakra-ui/react";
+import {useSelector} from "react-redux";
 
-const UserDetails = (props) => {
-    const {id} = props;
-
-    const handleClick = () => {
-        console.log(id);
-    }
+const UserDetails = () => {
+    const currentUser = useSelector(state => state.auth.currentUser);
 
     return (
-        <div onClick={handleClick}>
-           this is user detail
-        </div>
+        <Box marginTop="200px">
+           this is user detail {currentUser._id}
+        </Box>
     );
 };
 

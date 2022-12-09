@@ -22,6 +22,11 @@ import {
 } from "react-table";
 import {ArrowRightIcon} from "@chakra-ui/icons";
 import moment from "moment";
+import {useDispatch} from "react-redux";
+import {getUserById} from "../../../../redux/authSlice";
+import {unwrapResult} from "@reduxjs/toolkit";
+import {useHistory} from "react-router-dom";
+import store from "../../../../redux/store";
 
 export default function UserTable(props) {
     const { columnsData, tableData } = props;
@@ -29,6 +34,8 @@ export default function UserTable(props) {
 
     const columns = useMemo(() => columnsData, [columnsData]);
     const data = useMemo(() => tableData, [tableData]);
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const tableInstance = useTable(
         {
@@ -55,8 +62,9 @@ export default function UserTable(props) {
     const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
 
     const handleClickToDetail = (data) => {
-        setCurrentId(data);
-        
+        const result = dispatch(getUserById(data));
+        const currentUser = unwrapResult(result);
+        history.push(`/admin/users/${data}`);
     }
 
     return (

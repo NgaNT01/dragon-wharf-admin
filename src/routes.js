@@ -16,6 +16,7 @@ import DataTables from "views/admin/dataTables";
 import Reports from "./views/admin/Reports";
 import UserTable from "./views/admin/User/components/UserTable";
 import User from "./views/admin/User";
+import UserDetails from "./views/admin/User/components/UserDetails";
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     path: "/users",
     component: User,
+  },
+  {
+    layout: "/admin",
+    path: "/users/:userId",
+    component: UserDetails,
   },
   {
     name: "Profile",

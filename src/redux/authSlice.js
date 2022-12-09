@@ -17,6 +17,12 @@ export const getListUsers = createAsyncThunk('auth/getListUsers',async () => {
     const response = await userApi.getListUsers();
     return response.data.data;
 });
+
+export const getUserById = createAsyncThunk('auth/getUserById',async (payload, thunkAPI) => {
+    const response = await userApi.getUserById(payload);
+    console.log("user",response.data.data);
+    return response.data.data;
+});
 // ---------------------
 //      MAIN SLICE
 // ---------------------
@@ -25,6 +31,7 @@ const initialState = {
     isLoggedIn: false,
     isLoading: false,
     current: {},
+    currentUser: {}
 }
 
 const authSlice = createSlice({
@@ -62,6 +69,16 @@ const authSlice = createSlice({
             state.current = action.payload;
         },
         [getListUsers.rejected.type]: (state) => {
+            state.isLoading = false;
+        },
+        [getUserById.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [getUserById.fulfilled.type]: (state,action) => {
+            state.isLoading = false;
+            state.currentUser = action.payload;
+        },
+        [getUserById.rejected.type]: (state) => {
             state.isLoading = false;
         }
     },
