@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/tourApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/statistic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reportsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reportsSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/Reports/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Reports/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/User/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/reportsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reportsApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
       <workItem from="1670307929131" duration="404000" />
       <workItem from="1670308343199" duration="21649000" />
       <workItem from="1670382022849" duration="1032000" />
-      <workItem from="1670503367109" duration="37732000" />
+      <workItem from="1670503367109" duration="38911000" />
     </task>
     <servers />
   </component>

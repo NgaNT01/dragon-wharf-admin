@@ -8,7 +8,7 @@ const reportsApi = {
     findReports: (params) => {
         const url = `/report/search?q=${params}`;
         return axiosClient.get(url);
-    }
+    },
 
 }
 
