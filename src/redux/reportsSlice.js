@@ -10,6 +10,11 @@ export const getListReports = createAsyncThunk(
     }
 );
 
+export const findReports = createAsyncThunk('reports/findReports', async(payload,thunkAPI) => {
+    const response = await reportsApi.findReports(payload);
+    return response.data.data;
+});
+
 // export const signOut = createAsyncThunk(
 //     'auth/signOut',
 //     async (payload, thunkAPI) => {
@@ -43,6 +48,16 @@ const reportsSlice = createSlice({
         [getListReports.rejected.type]: (state) => {
             state.isLoading = false;
         },
+        [findReports.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [findReports.fulfilled.type]: (state,action) => {
+            state.isLoading = false;
+            state.listReports = action.payload;
+        },
+        [findReports.rejected.type]: (state) => {
+            state.isLoading = false;
+        }
     },
 });
 

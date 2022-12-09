@@ -21,11 +21,11 @@ export default function User() {
     useEffect(async () => {
         const result =await dispatch(getListUsers());
         const users = unwrapResult(result);
-        // setListUsers(users);
+        setListUsers(users);
     },[])
 
-    useEffect(() => {
-        setListUsers(current);
+    useEffect(async () => {
+        await setListUsers(current);
     })
 
     // Chakra Color Mode

@@ -37,7 +37,7 @@ const initialState = {
     isLoggedIn: false,
     isLoading: false,
     inputSearch: '',
-    current: {},
+    current: [],
     currentUser: {}
 }
 
@@ -56,7 +56,6 @@ const authSlice = createSlice({
     },
     extraReducers: {
         [signIn.pending.type]: (state) => {
-            state.currentUser = {};
             state.isLoading = true;
         },
         [signIn.fulfilled.type]: (state, payload) => {
