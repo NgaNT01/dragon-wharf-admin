@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+  Center,
   Flex,
   Table,
   Tbody,
@@ -74,16 +75,18 @@ export default function DevelopmentTable(props) {
               {headerGroup.headers.map((column, index) => (
                 <Th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
-                  pe='10px'
                   key={index}
                   borderColor={borderColor}>
-                  <Flex
-                    justify='space-between'
-                    align='center'
-                    fontSize={{ sm: "10px", lg: "12px" }}
-                    color='gray.400'>
+                  {/*<Flex*/}
+                  {/*  justify='space-between'*/}
+                  {/*  align='center'*/}
+                  {/*  fontSize={{ sm: "10px", lg: "12px" }}*/}
+                  {/*  color='gray.400'>*/}
+                  {/*  */}
+                  {/*</Flex>*/}
+                  <Center color='gray.400'>
                     {column.render("Header")}
-                  </Flex>
+                  </Center>
                 </Th>
               ))}
             </Tr>
@@ -98,41 +101,41 @@ export default function DevelopmentTable(props) {
                   let data = "";
                   if (cell.column.Header === "ID") {
                     data = (
-                      <Text color={textColor} fontSize='md' fontWeight='700'>
+                      <Center color={textColor} fontSize='md' fontWeight='700'>
                         {cell.value}
-                      </Text>
+                      </Center>
                     );
                   } else if (cell.column.Header === "Email") {
                     data = (
-                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                        <Center color={textColor} fontSize='md' fontWeight='700'>
                           {cell.value}
-                        </Text>
+                        </Center>
                     );
                   } else if (cell.column.Header === "Type") {
                     data = (
-                      <Text color={textColor} fontSize='md' fontWeight='700'>
+                      <Center color={textColor} fontSize='md' fontWeight='700'>
                         {cell.value}
-                      </Text>
+                      </Center>
                     );
                   } else if (cell.column.Header === "Content") {
                     data = (
-                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                        <Center color={textColor} fontSize='md' fontWeight='700'>
                           {cell.value}
-                        </Text>
+                        </Center>
                     );
                   }
                   else if (cell.column.Header === "Created At") {
                     data = (
-                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                        <Center color={textColor} fontSize='md' fontWeight='700'>
                           {moment(cell.value).format('DD/MM/YYYY')}
-                        </Text>
+                        </Center>
                     );
                   }
                   else if (cell.column.Header === "Updated At") {
                     data = (
-                        <Text color={textColor} fontSize='md' fontWeight='700'>
+                        <Center color={textColor} fontSize='md' fontWeight='700'>
                           {moment(cell.value).format('DD/MM/YYYY')}
-                        </Text>
+                        </Center>
                     );
                   }
                   return (

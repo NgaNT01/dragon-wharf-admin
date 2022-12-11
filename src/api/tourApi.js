@@ -2,10 +2,10 @@ import axiosClient from "./axiosClient";
 
 const tourApi = {
     getListTours: () => {
-        const url = '/report';
+        const url = '/tour';
         return axiosClient.get(url);
     },
-    statisticTout: (params) => {
+    statisticTour: (params) => {
         const url = `/tour/statisticTour${params}`;
         return axiosClient.get(url);
     }

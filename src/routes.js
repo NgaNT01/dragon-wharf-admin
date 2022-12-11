@@ -5,6 +5,7 @@ import {
   MdBarChart,
   MdPerson,
   MdHome,
+  MdTour
 } from "react-icons/md";
 
 // Admin Imports
@@ -17,6 +18,7 @@ import Reports from "./views/admin/Reports";
 import UserTable from "./views/admin/User/components/UserTable";
 import User from "./views/admin/User";
 import UserDetails from "./views/admin/User/components/UserDetails";
+import Tour from "./views/admin/Tour";
 
 const routes = [
   {
@@ -36,9 +38,9 @@ const routes = [
   {
     name: "Tour",
     layout: "/admin",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdTour} width='20px' height='20px' color='inherit' />,
     path: "/tours",
-    component: DataTables,
+    component: Tour,
   },
   {
     name: "User",

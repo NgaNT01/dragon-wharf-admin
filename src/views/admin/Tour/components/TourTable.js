@@ -1,6 +1,6 @@
 /* eslint-disable */
 import {
-    Center,
+    Badge, Box, Center,
     Flex, Icon,
     Table,
     Tbody,
@@ -21,7 +21,7 @@ import {
     useSortBy,
     useTable,
 } from "react-table";
-import {ArrowRightIcon} from "@chakra-ui/icons";
+import {ArrowRightIcon, CheckIcon, CloseIcon} from "@chakra-ui/icons";
 import moment from "moment";
 import {useDispatch} from "react-redux";
 import {getUserById} from "../../../../redux/authSlice";
@@ -29,7 +29,7 @@ import {unwrapResult} from "@reduxjs/toolkit";
 import {useHistory} from "react-router-dom";
 import store from "../../../../redux/store";
 
-export default function UserTable(props) {
+export default function TourTable(props) {
     const { columnsData, tableData } = props;
     const [currentId, setCurrentId] = useState(null);
 
@@ -68,6 +68,10 @@ export default function UserTable(props) {
         history.push(`/admin/users/${data}`);
     }
 
+    const handleCheckStatus = (data) => {
+        console.log(data);
+    }
+
     return (
         <Card
             direction='column'
@@ -91,17 +95,16 @@ export default function UserTable(props) {
                             {headerGroup.headers.map((column, index) => (
                                 <Th
                                     {...column.getHeaderProps(column.getSortByToggleProps())}
-                                    pe='10px'
                                     key={index}
                                     borderColor={borderColor}>
-                                    {/*<Flex*/}
-                                    {/*    justify='space-between'*/}
-                                    {/*    align='center'*/}
-                                    {/*    fontSize={{ sm: "10px", lg: "12px" }}*/}
-                                    {/*    color='gray.400'>*/}
-                                    {/*    */}
-                                    {/*</Flex>*/}
                                     <Center color='gray.400'>
+                                        {/*<Flex*/}
+                                        {/*    justify='space-between'*/}
+                                        {/*    align='center'*/}
+                                        {/*    fontSize={{ sm: "10px", lg: "12px" }}*/}
+                                        {/*    color='gray.400'>*/}
+                                        {/*    */}
+                                        {/*</Flex>*/}
                                         {column.render("Header")}
                                     </Center>
                                 </Th>
@@ -118,17 +121,17 @@ export default function UserTable(props) {
                                     let data = "";
                                     if (cell.column.Header === "ID") {
                                         data = (
-                                            <Center color={textColor} fontSize='md' fontWeight='700'>
+                                            <Text color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
-                                            </Center>
+                                            </Text>
                                         );
-                                    } else if (cell.column.Header === "Email") {
+                                    } else if (cell.column.Header === "Ngày") {
                                         data = (
                                             <Center color={textColor} fontSize='md' fontWeight='700'>
-                                                {cell.value}
+                                                {moment(cell.value).format('DD/MM/YYYY')}
                                             </Center>
                                         );
-                                    } else if (cell.column.Header === "Họ tên") {
+                                    } else if (cell.column.Header === "Tên người dùng") {
                                         data = (
                                             <Center color={textColor} fontSize='md' fontWeight='700'>
                                                 {cell.value}
@@ -141,20 +144,42 @@ export default function UserTable(props) {
                                             </Center>
                                         );
                                     }
-                                    else if (cell.column.Header === "Ngày sinh") {
+                                    else if (cell.column.Header === "Email") {
                                         data = (
-                                        <Center color={textColor} fontSize='md' fontWeight='700'>
-                                            {moment(cell.value).format('DD/MM/YYYY')}
-                                        </Center>
+                                            <Center color={textColor} fontSize='md' fontWeight='700'>
+                                                {cell.value}
+                                            </Center>
                                         );
                                     }
-                                    else if (cell.column.Header === "Chi tiết") {
+                                    else if (cell.column.Header === "Số hành khách") {
                                         data = (
-                                            // <Text color={textColor} fontSize='sm' fontWeight='700'>
-                                            //     {cell.value}
+                                            <Center color={textColor} fontSize='md' fontWeight='700'>
+                                                {cell.value}
+                                            </Center>
+                                        );
+                                    }
+                                    else if (cell.column.Header === "Chi phí") {
+                                        data = (
+                                            <Center color={textColor} fontSize='md' fontWeight='700'>
+                                                {cell.value}
+                                            </Center>
+                                        );
+                                    }
+                                    else if (cell.column.Header === "Trạng thái giám sát") {
+                                        data = (
+                                            // <Text color={cell.value === true ? 'purple' : '#6A1A15'} fontSize='md' fontWeight='700' onClick={() => handleCheckStatus(cell)}>
+                                            //     {cell.value === true ? "Đã giám sát" : "Chưa giám sát"}
                                             // </Text>
                                             <Center>
-                                                <ArrowRightIcon cursor="pointer" onClick={() => handleClickToDetail(cell.row.allCells[0].value)}></ArrowRightIcon>
+                                                {cell.value === true ? <CheckIcon margin='auto' fontSize='18px' color={textColor}></CheckIcon> : <CloseIcon color='#6A1A15'></CloseIcon>}
+                                            </Center>
+
+                                        );
+                                    }
+                                    else if (cell.column.Header === "Người hướng dẫn") {
+                                        data = (
+                                            <Center color={textColor} fontSize='md' fontWeight='700'>
+                                                {cell.value}
                                             </Center>
                                         );
                                     }
@@ -164,8 +189,13 @@ export default function UserTable(props) {
                                             key={index}
                                             fontSize={{ sm: "14px" }}
                                             minW={{ sm: "150px", md: "200px", lg: "auto" }}
-                                            borderColor='transparent'>
-                                            {data}
+                                            borderColor='transparent'
+                                            alignSelf='center'
+                                            align='center'
+                                            alignItems='center'
+                                        >
+                                                {data}
+
                                         </Td>
                                     );
                                 })}

@@ -15,7 +15,11 @@ const UserDetails = () => {
                                             size='xl'
                                             position="absolute"
                                             right="800px"
-            ></Spinner> : <Box>This is user {currentUser._id}</Box>}
+            ></Spinner> :
+            <Box>
+
+            </Box>
+            }
 
         </Box>
     );

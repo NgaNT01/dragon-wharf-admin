@@ -8,19 +8,19 @@ export const columnsDataUser = [
         accessor: "email",
     },
     {
-        Header: "Name",
+        Header: "Họ tên",
         accessor: "name",
     },
     {
-        Header: "Phone",
+        Header: "Số điện thoại",
         accessor: "phone",
     },
     {
-        Header: "Date of birth",
+        Header: "Ngày sinh",
         accessor: "dob",
     },
     {
-        Header: "Detail",
+        Header: "Chi tiết",
         accessor: ""
     }
 ];

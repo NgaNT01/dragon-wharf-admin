@@ -10,7 +10,6 @@ import {useDispatch, useSelector} from "react-redux";
 import UserTable from "./components/UserTable";
 import {getListUsers} from "../../../redux/authSlice";
 import {unwrapResult} from "@reduxjs/toolkit";
-import UsersTable from "./components/UsersTable";
 
 export default function User() {
     const dispatch = useDispatch();
@@ -31,8 +30,6 @@ export default function User() {
     // Chakra Color Mode
     return (
         <Box pt={{ base: "500px", md: "80px", xl: "80px" }}>
-
-            {/*<UsersTable data={listUsers}></UsersTable>*/}
             {isLoading === true ? <Spinner thickness='4px'
                                             speed='0.85s'
                                             emptyColor='gray.200'
