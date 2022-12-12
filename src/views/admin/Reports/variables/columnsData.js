@@ -1,26 +1,26 @@
 export const columnsDataReports = [
     {
-        Header: "ID",
-        accessor: "_id",
-    },
-    {
         Header: "Email",
         accessor: "email",
     },
     {
-        Header: "Type",
+        Header: "Loại",
         accessor: "type",
     },
     {
-        Header: "Content",
+        Header: "Nội dung",
         accessor: "content",
     },
     {
-        Header: "Created At",
+        Header: "Ngày tạo",
         accessor: "createdAt",
     },
     {
-        Header: "Updated At",
+        Header: "Ngày cập nhật",
         accessor: "updatedAt",
+    },
+    {
+        Header: "Chi tiết",
+        accessor: "",
     }
 ];

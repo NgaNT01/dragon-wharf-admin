@@ -80,7 +80,7 @@ export default function UserTable(props) {
                     fontSize='22px'
                     fontWeight='700'
                     lineHeight='100%'>
-                    Users Table
+                    Bảng User
                 </Text>
                 <Menu />
             </Flex>

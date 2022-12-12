@@ -21,10 +21,10 @@ export default function Tour() {
         const tours = unwrapResult(result);
         setListTours(tours);
     },[])
-
-    useEffect(async () => {
-        await setListTours(listTourCurrent);
-    })
+    //
+    // useEffect(async () => {
+    //     await setListTours(listTourCurrent);
+    // },[listTourCurrent])
 
     // Chakra Color Mode
     return (
@@ -39,7 +39,7 @@ export default function Tour() {
                                            top="300px"
             ></Spinner> : <TourTable
                 columnsData={columnsDataTour}
-                tableData={listTours}
+                tableData={listTourCurrent}
             />}
         </Box>
     );

@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/tourSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Tour/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Tour/variables/ColumnData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/tourApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/tourApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/icons/Icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sidebar/components/Brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/components/Brand.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/Mastercard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/Member.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/MiniStatistics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/NFT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarExample.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavbarRTL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/scroll/ScrollToTop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/tourSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tourSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Reports/variables/columnsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Reports/variables/columnsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/variables/ColumnData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/variables/ColumnData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/UserDetails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UsersTable.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" afterDir="false" />
@@ -80,7 +83,7 @@
       <workItem from="1670307929131" duration="404000" />
       <workItem from="1670308343199" duration="21649000" />
       <workItem from="1670382022849" duration="1032000" />
-      <workItem from="1670503367109" duration="54176000" />
+      <workItem from="1670503367109" duration="70368000" />
     </task>
     <servers />
   </component>

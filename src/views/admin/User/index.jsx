@@ -23,9 +23,9 @@ export default function User() {
         setListUsers(users);
     },[])
 
-    useEffect(async () => {
-        await setListUsers(current);
-    })
+    // useEffect(async () => {
+    //     await setListUsers(current);
+    // })
 
     // Chakra Color Mode
     return (

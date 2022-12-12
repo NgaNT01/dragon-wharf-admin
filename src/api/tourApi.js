@@ -8,6 +8,10 @@ const tourApi = {
     statisticTour: (params) => {
         const url = `/tour/statisticTour${params}`;
         return axiosClient.get(url);
+    },
+    inspectTour: (payload) => {
+        const url = `/tour/inspect`;
+        return axiosClient.put(url,payload)
     }
 
 }

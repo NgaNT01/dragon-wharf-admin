@@ -17,6 +17,14 @@ export const statisticTour = createAsyncThunk('tours/statisticTour',async (paylo
     return response.data.data;
 });
 
+export const inspectTour = createAsyncThunk('tours/inspectTour',(payload, thunkAPI) => {
+    const response = tourApi.inspectTour(payload);
+    thunkAPI.dispatch(getListTours());
+    console.log("inspect",response);
+    // const list = tourApi.getListTours();
+    // return list.data.data;
+});
+
 // export const signOut = createAsyncThunk(
 //     'auth/signOut',
 //     async (payload, thunkAPI) => {
@@ -60,6 +68,15 @@ const toursSlice = createSlice({
             state.tourStatistic = action.payload;
         },
         [statisticTour.rejected.type]: (state) => {
+            state.isLoading = false;
+        },
+        [inspectTour.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [inspectTour.fulfilled.type]: (state) => {
+            state.isLoading = false;
+        },
+        [inspectTour.rejected.type]: (state) => {
             state.isLoading = false;
         }
     },

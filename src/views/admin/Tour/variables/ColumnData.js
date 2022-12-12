@@ -1,7 +1,7 @@
 export const columnsDataTour = [
     {
-        Header: "ID",
-        accessor: "_id",
+        Header: "",
+        accessor: "__v",
     },
     {
         Header: "Ngày",
@@ -24,11 +24,15 @@ export const columnsDataTour = [
         accessor: "people",
     },
     {
+        Header: "Ghi chú",
+        accessor: "note",
+    },
+    {
         Header: "Chi phí",
         accessor: "fee"
     },
     {
-        Header: "Trạng thái giám sát",
+        Header: "Trạng thái duyệt",
         accessor: "inspected"
     },
     {

@@ -22,6 +22,7 @@ import {
   useTable,
 } from "react-table";
 import moment from "moment";
+import {ArrowRightIcon} from "@chakra-ui/icons";
 
 export default function DevelopmentTable(props) {
   const { columnsData, tableData } = props;
@@ -52,6 +53,11 @@ export default function DevelopmentTable(props) {
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const iconColor = useColorModeValue("secondaryGray.500", "white");
   const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
+
+  const handleDetail = (data) => {
+    console.log(data);
+  }
+
   return (
     <Card
       direction='column'
@@ -64,7 +70,7 @@ export default function DevelopmentTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Reports Table
+          Bảng Report
         </Text>
         <Menu />
       </Flex>
@@ -111,30 +117,40 @@ export default function DevelopmentTable(props) {
                           {cell.value}
                         </Center>
                     );
-                  } else if (cell.column.Header === "Type") {
+                  } else if (cell.column.Header === "Loại") {
                     data = (
                       <Center color={textColor} fontSize='md' fontWeight='700'>
                         {cell.value}
                       </Center>
                     );
-                  } else if (cell.column.Header === "Content") {
+                  } else if (cell.column.Header === "Nội dung") {
                     data = (
                         <Center color={textColor} fontSize='md' fontWeight='700'>
                           {cell.value}
                         </Center>
                     );
                   }
-                  else if (cell.column.Header === "Created At") {
+                  else if (cell.column.Header === "Ngày tạo") {
                     data = (
                         <Center color={textColor} fontSize='md' fontWeight='700'>
                           {moment(cell.value).format('DD/MM/YYYY')}
                         </Center>
                     );
                   }
-                  else if (cell.column.Header === "Updated At") {
+                  else if (cell.column.Header === "Ngày cập nhật") {
                     data = (
                         <Center color={textColor} fontSize='md' fontWeight='700'>
                           {moment(cell.value).format('DD/MM/YYYY')}
+                        </Center>
+                    );
+                  }
+                  else if (cell.column.Header === "Chi tiết") {
+                    data = (
+                        // <Center color={textColor} fontSize='md' fontWeight='700'>
+                        //   {moment(cell.value).format('DD/MM/YYYY')}
+                        // </Center>
+                        <Center>
+                          <ArrowRightIcon onClick={() => handleDetail(row)} cursor='pointer'></ArrowRightIcon>
                         </Center>
                     );
                   }
