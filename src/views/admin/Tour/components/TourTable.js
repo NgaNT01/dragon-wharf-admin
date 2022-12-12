@@ -30,7 +30,8 @@ import {unwrapResult} from "@reduxjs/toolkit";
 import {useHistory} from "react-router-dom";
 import store from "../../../../redux/store";
 import {Button} from "antd";
-import {inspectTour} from "../../../../redux/tourSlice";
+import {getListTours, inspectTour} from "../../../../redux/tourSlice";
+import Swal from "sweetalert2";
 
 export default function TourTable(props) {
     const { columnsData, tableData } = props;
@@ -87,13 +88,32 @@ export default function TourTable(props) {
     }
 
     const onFinish = (data) => {
-        const payload = {
-            tourId: tourChecked,
-            guider: data.guider,
-            fee: data.fee
-        };
-        const result = dispatch(inspectTour(payload));
-        setOpen(false);
+        try {
+            const payload = {
+                tourId: tourChecked,
+                guider: data.guider,
+                fee: data.fee
+            };
+            const result = dispatch(inspectTour(payload));
+            const response = unwrapResult(result);
+            Swal.fire(
+                'Thành công!',
+                'Bạn đã duyệt tour này!',
+                'success'
+            )
+        }
+        catch (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ôi không...',
+                text: `${err.message}`
+            })
+        }
+        finally {
+            dispatch(getListTours())
+            setOpen(false);
+        }
+
     }
 
     const handleClickInspect = () => {

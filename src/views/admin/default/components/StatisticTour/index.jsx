@@ -22,23 +22,24 @@ const StatisticTour = () => {
             },
         },
         xaxis: {
-            categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+            categories: ['09/2022','10/2022','11/2022','12/2022'],
+            fontSize: '30px'
         }
     });
     const [series, setSeries] = useState([
         {
             name: "series-1",
-            data: [30, 40, 45, 50, 49, 60, 70, 91]
+            data: [1,5,4,33]
         }
     ]);
 
     return (
-        <Box bg="none" w="500px">
+        <Box bg="none" w="500px" marginTop="70px">
             <Chart
                 options={options}
                 series={series}
                 type="bar"
-                width="1000"
+                width="800"
             />
         </Box>
     );

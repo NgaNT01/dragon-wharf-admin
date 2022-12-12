@@ -1,5 +1,9 @@
 export const columnsDataUser = [
     {
+        Header: "",
+        accessor: "_id",
+    },
+    {
         Header: "Email",
         accessor: "email",
     },

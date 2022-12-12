@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import reportsApi from "../api/reportsApi";
 import tourApi from "../api/tourApi";
+import Swal from 'sweetalert2'
 
 //  Thunk API
 export const getListTours = createAsyncThunk(

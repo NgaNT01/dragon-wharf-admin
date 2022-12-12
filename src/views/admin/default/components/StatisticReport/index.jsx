@@ -7,7 +7,7 @@ const StatisticReport = () => {
         dataLabels: {
             enabled: true,
         },
-        labels: ['A','B','C','D','E'],
+        labels: ['Tour','Other','Service'],
         pie: {
             donut: {
                 size: '65%',
@@ -37,11 +37,11 @@ const StatisticReport = () => {
             },
         },
     });
-    const [series, setSeries] = useState([44, 55, 41, 17, 15]);
+    const [series, setSeries] = useState([2,2,3]);
 
     return (
-        <Box w="500px" marginTop="100px">
-            <Chart options={options} series={series} type="donut"  width="800" />
+        <Box w="500px" marginTop="70px" marginRight='120px'>
+            <Chart options={options} series={series} type="donut"  width="600" />
         </Box>
     );
 };
