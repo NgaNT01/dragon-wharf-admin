@@ -38,6 +38,11 @@ export const deleteUser = createAsyncThunk('user/deleteUser', async (payload) =>
     const response = await userApi.deleteUser(payload);
     return response.data.data;
 });
+
+export const updateUserInfo = createAsyncThunk('user/updateUserInfo',async (payload) => {
+    const response = await userApi.updateUserInfo(payload);
+    return response.data.data;
+});
 // ---------------------
 //      MAIN SLICE
 // ---------------------

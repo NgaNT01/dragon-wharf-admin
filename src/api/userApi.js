@@ -24,6 +24,10 @@ const userApi = {
     deleteUser: (id) => {
         const url = `/user/${id}`;
         return axiosClient.delete(url);
+    },
+    updateUserInfo: (payload) => {
+        const url = `/user/update-info`;
+        return axiosClient.put(url,payload);
     }
 }
 

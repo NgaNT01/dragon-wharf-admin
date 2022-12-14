@@ -5,11 +5,27 @@ import { MdAccountCircle } from "react-icons/md";
 import Card from "../../../../components/card/Card";
 import {HSeparator} from "../../../../components/separator/Separator";
 import moment from "moment";
+import {Button} from "antd";
+import EditUserForm from "./EditUserForm";
 
 const UserDetails = () => {
     const textColor = useColorModeValue("secondaryGray.900", "white");
     const isLoading = useSelector(state => state.auth.isLoading);
     const currentUser = useSelector(state => state.auth.currentUser);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [currentUser])
+
+    const onEditProfile = () => {
+        setIsOpen(true);
+
+    }
+
+    const onCancel = () => {
+        setIsOpen(false);
+    }
 
     return (
         <Box marginTop="100px">
@@ -33,7 +49,16 @@ const UserDetails = () => {
                         lineHeight='100%'>
                         Thông tin user
                     </Text>
+                    <Button type='primary' style={{marginLeft: '20px'}} onClick={onEditProfile}>Chỉnh sửa</Button>
+                    <EditUserForm
+                        isOpen={isOpen}
+                        onCancel={onCancel}
+                        userInfo={currentUser}
+                    >
+
+                    </EditUserForm>
                 </Flex>
+
                 <Box marginLeft='50px' marginTop='50px'>
                     <Text color='secondaryGray.700' fontSize='18px' lineHeight='100%'>Họ tên: {currentUser.name}</Text>
                     <HSeparator width='50%' margin='30px 0'></HSeparator>
