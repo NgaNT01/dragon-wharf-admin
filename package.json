@@ -4,6 +4,7 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
     "@chakra-ui/icons": "^1.1.5",
     "@chakra-ui/react": "1.8.8",
     "@chakra-ui/system": "^1.12.1",
@@ -23,6 +24,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "chakra-paginator": "^0.7.3",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.4",
     "react": "17.0.2",

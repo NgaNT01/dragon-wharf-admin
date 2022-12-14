@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    Box,
     Center,
     Flex, Icon,
     Table,
@@ -24,10 +25,14 @@ import {
 import {ArrowRightIcon} from "@chakra-ui/icons";
 import moment from "moment";
 import {useDispatch} from "react-redux";
-import {getUserById} from "../../../../redux/authSlice";
+import {deleteUser, getListUsers, getUserById} from "../../../../redux/authSlice";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {useHistory} from "react-router-dom";
 import store from "../../../../redux/store";
+import {Button, Checkbox, Modal} from "antd";
+import AddUserForm from "./AddUserForm";
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+import Swal from "sweetalert2";
 
 export default function UserTable(props) {
     const { columnsData, tableData } = props;
@@ -61,11 +66,56 @@ export default function UserTable(props) {
     const textColor = useColorModeValue("secondaryGray.900", "white");
     const iconColor = useColorModeValue("secondaryGray.500", "white");
     const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClickToDetail = (data) => {
         const result = dispatch(getUserById(data));
         const currentUser = unwrapResult(result);
         history.push(`/admin/users/${data}`);
+    }
+
+    const handleClickCheckbox = (e,row) => {
+        if (e.target.checked === true) setCurrentId(row.original._id);
+    }
+
+    const handleAddUser = () => {
+        setIsOpen(true);
+    }
+
+    const onDeleteUser = () => {
+        if (currentId) {
+            Modal.confirm({
+                title: 'Xác nhân',
+                icon: <ExclamationCircleOutlined />,
+                content: 'Bạn có chắc chắc bạn muốn xóa user này ?',
+                okText: 'Xóa',
+                cancelText: 'Hủy',
+                onOk: async () => {
+                    try {
+                        await dispatch(deleteUser(currentId));
+                        Swal.fire(
+                            'Thành công!',
+                            'Bạn đã xóa user này!',
+                            'success'
+                        )
+                    }
+                    catch (err) {
+                        await Swal.fire({
+                            icon: 'error',
+                            title: 'Ôi không...',
+                            text: `${err.message}`
+                        })
+                    }
+                    finally {
+                        await dispatch(getListUsers());
+                    }
+                },
+            });
+        }
+    }
+
+    const handleCancel = () => {
+        setIsOpen(false);
     }
 
     return (
@@ -82,7 +132,19 @@ export default function UserTable(props) {
                     lineHeight='100%'>
                     Bảng User
                 </Text>
-                <Menu />
+                <Box>
+                    <Button danger size='md' onClick={onDeleteUser}>Xóa User</Button>
+                    <Button
+                        type='primary'
+                        size='md'
+                        style={{marginLeft: '10px'}}
+                        onClick={handleAddUser}
+                    >
+                        + Thêm một User
+                    </Button>
+                    <AddUserForm isOpen={isOpen} onCancel={handleCancel}/>
+                </Box>
+                {/*<Menu />*/}
             </Flex>
             <Table {...getTableProps()} variant='simple' color='gray.500' mb='24px'>
                 <Thead>
@@ -116,11 +178,14 @@ export default function UserTable(props) {
                             <Tr {...row.getRowProps()} key={index}>
                                 {row.cells.map((cell, index) => {
                                     let data = "";
-                                    if (cell.column.Header === "ID") {
+                                    if (cell.column.Header === "") {
                                         data = (
-                                            <Center color={textColor} fontSize='md' fontWeight='700'>
-                                                {cell.value}
-                                            </Center>
+                                            // <Center color={textColor} fontSize='md' fontWeight='700'>
+                                            //     {cell.value}
+                                            // </Center>
+                                           <Center>
+                                               <Checkbox onChange={(e) => handleClickCheckbox(e,row)}></Checkbox>
+                                           </Center>
                                         );
                                     } else if (cell.column.Header === "Email") {
                                         data = (

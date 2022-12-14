@@ -16,6 +16,14 @@ const userApi = {
     findUser: (params) => {
         const url = `/user/search?q=${params}`;
         return axiosClient.get(url);
+    },
+    createUser: (payload) => {
+        const url = `/user/create`;
+        return axiosClient.post(url,payload);
+    },
+    deleteUser: (id) => {
+        const url = `/user/${id}`;
+        return axiosClient.delete(url);
     }
 }
 

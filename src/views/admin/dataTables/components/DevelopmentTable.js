@@ -23,7 +23,14 @@ import {
 } from "react-table";
 import moment from "moment";
 import {ArrowRightIcon} from "@chakra-ui/icons";
-
+import {
+  Paginator,
+  Container,
+  Previous,
+  usePaginator,
+  Next,
+  PageGroup
+} from "chakra-paginator";
 export default function DevelopmentTable(props) {
   const { columnsData, tableData } = props;
 

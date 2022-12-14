@@ -8,8 +8,8 @@ import {
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import {useDispatch} from "react-redux";
-import {findUser} from "../../../redux/authSlice";
-import {findReports} from "../../../redux/reportsSlice";
+import {findUser, getListUsers} from "../../../redux/authSlice";
+import {findReports, getListReports} from "../../../redux/reportsSlice";
 export function SearchBar(props) {
   // Pass the computed styles into the `__css` prop
   const { variant, background, children, placeholder, borderRadius, ...rest } =
@@ -22,10 +22,10 @@ export function SearchBar(props) {
   const dispatch = useDispatch();
 
   const handleChangeInput = (e) => {
-      console.log(e.target.value);
+      console.log(e.target.value === '');
       if (e.target.value === '') {
-          dispatch(findUser('a'))
-          dispatch(findReports('o'))
+          dispatch(getListUsers())
+          dispatch(getListReports())
       }
       else {
           dispatch(findUser(e.target.value))

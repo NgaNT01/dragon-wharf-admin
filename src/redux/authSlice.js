@@ -24,9 +24,18 @@ export const getUserById = createAsyncThunk('auth/getUserById',async (payload, t
     return response.data.data;
 });
 
-export const findUser = createAsyncThunk('auth/findUser',async (payload, thunkAPI) => {
+export const findUser = createAsyncThunk('auth/findUser',async (payload) => {
     const response = await userApi.findUser(payload);
-    console.log("find user",response.data.data);
+    return response.data.data;
+});
+
+export const createUser = createAsyncThunk('user/createUser', async (payload) => {
+    const response = await userApi.createUser(payload);
+    return response.data.data;
+})
+
+export const deleteUser = createAsyncThunk('user/deleteUser', async (payload) => {
+    const response = await userApi.deleteUser(payload);
     return response.data.data;
 });
 // ---------------------
@@ -97,7 +106,7 @@ const authSlice = createSlice({
         },
         [findUser.rejected.type]: (state) => {
             state.isLoading = false;
-        }
+        },
     },
 });
 

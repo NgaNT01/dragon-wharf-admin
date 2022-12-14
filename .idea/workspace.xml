@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/admin/User/components/AddUserForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/tourSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tourSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/variables/columnsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/StatisticReport/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/components/StatisticReport/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/default/components/StatisticTour/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/components/StatisticTour/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/default/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/default/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/searchBar/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/UserTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/User/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/dataTables/components/DevelopmentTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ubuntu/Workspace/MS_DragonWharfMgmt_BE_Building",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/snap/intellij-idea-ultimate/398/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ubuntu/Workspace/MS_DragonWharfMgmt_BE_Building&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/398/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/views/admin" />
@@ -72,6 +73,8 @@
       <workItem from="1670308343199" duration="21649000" />
       <workItem from="1670382022849" duration="1032000" />
       <workItem from="1670503367109" duration="72212000" />
+      <workItem from="1670850557345" duration="1247000" />
+      <workItem from="1670990817416" duration="8498000" />
     </task>
     <servers />
   </component>

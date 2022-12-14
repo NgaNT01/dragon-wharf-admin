@@ -1,10 +1,9 @@
 
 // Chakra imports
-import {Box, SimpleGrid, Spinner} from "@chakra-ui/react";
+import {Box, Spinner} from "@chakra-ui/react";
 import {
     columnsDataUser
 } from "views/admin/User/variables/columnsData";
-import tableDataDevelopment from "views/admin/User/variables/tableDataUser.json";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import UserTable from "./components/UserTable";
@@ -23,9 +22,9 @@ export default function User() {
         setListUsers(users);
     },[])
 
-    // useEffect(async () => {
-    //     await setListUsers(current);
-    // })
+    useEffect(async () => {
+        await setListUsers(current);
+    })
 
     // Chakra Color Mode
     return (
