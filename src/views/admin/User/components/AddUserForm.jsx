@@ -100,7 +100,7 @@ const AddUserForm = (props) => {
                     name="dob"
                 >
                     <DatePicker
-                        format='DD/MM/YYYY'
+                        format='YYYY-MM-DD'
                     ></DatePicker>
                 </Form.Item>
 
