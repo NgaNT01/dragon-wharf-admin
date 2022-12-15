@@ -12,6 +12,14 @@ const tourApi = {
     inspectTour: (payload) => {
         const url = `/tour/inspect`;
         return axiosClient.put(url,payload)
+    },
+    addNewTour: (payload) => {
+        const url = `/tour/add`;
+        return axiosClient.post(url,payload);
+    },
+    rejectTour: (id) => {
+        const url = `/tour/reject/${id}`;
+        return axiosClient.put(url);
     }
 
 }

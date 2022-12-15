@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d02831ee-d59e-4361-b996-bb94246bc758" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/admin/User/components/EditUserForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/admin/Tour/components/AddTourForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/UserDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/UserDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/reportsApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reportsApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/tourApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/tourApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/tourSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tourSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/components/TourTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Tour/variables/ColumnData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Tour/variables/ColumnData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/User/components/EditUserForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/User/components/EditUserForm.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
       <workItem from="1670382022849" duration="1032000" />
       <workItem from="1670503367109" duration="72212000" />
       <workItem from="1670850557345" duration="1247000" />
-      <workItem from="1670990817416" duration="13924000" />
+      <workItem from="1670990817416" duration="19730000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,9 @@ const reportsApi = {
         const url = `/report/search?q=${params}`;
         return axiosClient.get(url);
     },
+    statisticReport: () => {
+
+    }
 
 }
 

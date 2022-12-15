@@ -32,8 +32,8 @@ export const columnsDataTour = [
         accessor: "fee"
     },
     {
-        Header: "Trạng thái duyệt",
-        accessor: "inspected"
+        Header: "Trạng thái",
+        accessor: "status"
     },
     {
         Header: "Người hướng dẫn",

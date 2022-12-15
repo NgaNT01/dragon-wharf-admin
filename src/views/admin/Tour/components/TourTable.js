@@ -11,7 +11,7 @@ import {
     Tr,
     useColorModeValue,
 } from "@chakra-ui/react";
-import {Checkbox, Modal, Form, Input, notification} from 'antd';
+import {Checkbox, Modal, Form, Input, notification, Tag} from 'antd';
 // Custom components
 import Card from "components/card/Card";
 import Menu from "components/menu/MainMenu";
@@ -25,13 +25,15 @@ import {
 import {ArrowRightIcon, CheckIcon, CloseIcon} from "@chakra-ui/icons";
 import moment from "moment";
 import {useDispatch} from "react-redux";
-import {getUserById} from "../../../../redux/authSlice";
+import {deleteUser, getListUsers, getUserById} from "../../../../redux/authSlice";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {useHistory} from "react-router-dom";
 import store from "../../../../redux/store";
 import {Button} from "antd";
-import {getListTours, inspectTour} from "../../../../redux/tourSlice";
+import {getListTours, inspectTour, rejectTour} from "../../../../redux/tourSlice";
 import Swal from "sweetalert2";
+import {ExclamationCircleOutlined} from "@ant-design/icons";
+import AddTourForm from "./AddTourForm";
 
 export default function TourTable(props) {
     const { columnsData, tableData } = props;
@@ -69,6 +71,7 @@ export default function TourTable(props) {
 
     const [tourChecked, setTourChecked] = React.useState(null)
     const [open, setOpen] = useState(false);
+    const [isOpenAddForm, setIsOpenAddForm] = useState(false);
     const showModal = () => {
         setOpen(true);
     };
@@ -87,15 +90,14 @@ export default function TourTable(props) {
 
     }
 
-    const onFinish = (data) => {
+    const onFinish = async (data) => {
         try {
             const payload = {
                 tourId: tourChecked,
                 guider: data.guider,
                 fee: data.fee
             };
-            const result = dispatch(inspectTour(payload));
-            const response = unwrapResult(result);
+            await dispatch(inspectTour(payload));
             Swal.fire(
                 'Thành công!',
                 'Bạn đã duyệt tour này!',
@@ -103,14 +105,14 @@ export default function TourTable(props) {
             )
         }
         catch (err) {
-            Swal.fire({
+            await  Swal.fire({
                 icon: 'error',
                 title: 'Ôi không...',
                 text: `${err.message}`
             })
         }
         finally {
-            dispatch(getListTours())
+            await dispatch(getListTours())
             setOpen(false);
         }
 
@@ -120,10 +122,50 @@ export default function TourTable(props) {
      if (tourChecked !== null) showModal();
     }
 
+    const handleClickAddNew = () => {
+        setIsOpenAddForm(true);
+    }
+
+    const handleClickReject = () => {
+        if (tourChecked) {
+            Modal.confirm({
+                title: 'Xác nhân',
+                icon: <ExclamationCircleOutlined />,
+                content: 'Bạn có chắc chắc muốn hủy tour này ?',
+                okText: 'Chấp nhận',
+                cancelText: 'Hủy',
+                onOk: async () => {
+                    try {
+                        await dispatch(rejectTour(tourChecked));
+                        Swal.fire(
+                            'Thành công!',
+                            'Bạn đã xóa user này!',
+                            'success'
+                        )
+                    }
+                    catch (err) {
+                        await Swal.fire({
+                            icon: 'error',
+                            title: 'Ôi không...',
+                            text: `${err.message}`
+                        })
+                    }
+                    finally {
+                        await dispatch(getListTours());
+                    }
+                },
+            });
+        }
+    }
+
     const setCheckedList = (event, row) => {
         if (event.target.checked === true) setTourChecked(row.original._id);
         else if (event.target.checked === false) setTourChecked(null);
         form.setFieldsValue(' ');
+    }
+
+    const onCancelAddForm = () => {
+        setIsOpenAddForm(false);
     }
 
 
@@ -141,7 +183,12 @@ export default function TourTable(props) {
                     lineHeight='100%'>
                     Bảng Tour
                 </Text>
-                <Button type='primary' style={{width: '120px'}} onClick={handleClickInspect}>Giám sát</Button>
+                <Flex>
+                    <Button danger style={{width: '120px', marginRight: '10px'}} onClick={handleClickReject}>Hủy tour</Button>
+                    <Button type='primary' style={{width: '120px', marginRight: '10px'}} onClick={handleClickInspect}>Duyệt tour</Button>
+                    <Button type='primary' style={{width: '160px'}} onClick={handleClickAddNew}>+ Thêm một tour mới</Button>
+                    <AddTourForm isOpen={isOpenAddForm} onCancel={onCancelAddForm}/>
+                </Flex>
                 <Modal
                     title="Nhập thông tin cần thiết"
                     open={open}
@@ -239,7 +286,7 @@ export default function TourTable(props) {
                                             //     {cell.value}
                                             // </Text>
                                             <Center>
-                                                {row.original.inspected === false ? <Checkbox onChange={(e) => {
+                                                {row.original.status === "pending" ? <Checkbox onChange={(e) => {
                                                     // setCheckedItems(prev => prev.push(e.target.value));
                                                     setCheckedList(e, row);
                                                 }}></Checkbox> : null}
@@ -299,15 +346,24 @@ export default function TourTable(props) {
                                             </Center>
                                         );
                                     }
-                                    else if (cell.column.Header === "Trạng thái duyệt") {
-                                        data = (
+                                    else if (cell.column.Header === "Trạng thái") {
+                                        if (cell.value === "pending") data = (
+                                            <Center>
+                                                <Tag color='green'>Chờ duyệt</Tag>
+                                            </Center>
+                                        )
+                                        else if (cell.value === "rejected") data = (
                                             // <Text color={cell.value === true ? 'purple' : '#6A1A15'} fontSize='md' fontWeight='700' onClick={() => handleCheckStatus(cell)}>
                                             //     {cell.value === true ? "Đã giám sát" : "Chưa giám sát"}
                                             // </Text>
                                             <Center>
-                                                {cell.value === true ? <CheckIcon margin='auto' fontSize='18px' color={textColor}></CheckIcon> : <CloseIcon color='#6A1A15'></CloseIcon>}
+                                                <Tag color='red'>Đã hủy</Tag>
                                             </Center>
-
+                                        )
+                                        else data = (
+                                                <Center>
+                                                    <Tag color='blue'>Đã duyệt</Tag>
+                                                </Center>
                                         );
                                     }
                                     else if (cell.column.Header === "Người hướng dẫn") {

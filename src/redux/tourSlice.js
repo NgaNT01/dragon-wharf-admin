@@ -18,13 +18,22 @@ export const statisticTour = createAsyncThunk('tours/statisticTour',async (paylo
     return response.data.data;
 });
 
-export const inspectTour = createAsyncThunk('tours/inspectTour',(payload, thunkAPI) => {
-    const response = tourApi.inspectTour(payload);
-    thunkAPI.dispatch(getListTours());
-    console.log("inspect",response);
+export const inspectTour = createAsyncThunk('tours/inspectTour',async (payload, thunkAPI) => {
+    const response = await tourApi.inspectTour(payload);
+    return response.data.data;
     // const list = tourApi.getListTours();
     // return list.data.data;
 });
+
+export const addNewTour = createAsyncThunk('/tours/addNewTour',async (payload) => {
+    const response = await tourApi.addNewTour(payload);
+    return response.data.data;
+})
+
+export const rejectTour = createAsyncThunk('tours/rejectTour',async (payload) => {
+    const response = await tourApi.rejectTour(payload);
+    return response.data.data;
+})
 
 // export const signOut = createAsyncThunk(
 //     'auth/signOut',

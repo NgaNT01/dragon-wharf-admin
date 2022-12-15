@@ -12,7 +12,7 @@ const EditUserForm = (props) => {
     const {isOpen, onCancel, userInfo} = props;
     const {form} = useForm();
     const dispatch = useDispatch();
-    const [dob, setDob] = useState(userInfo.dob);
+    const [dob, setDob] = useState({});
 
     const onFinish = async (data) => {
         try {
@@ -42,7 +42,6 @@ const EditUserForm = (props) => {
 
     const handleChangeDob = (dob) => {
         setDob(dob);
-        console.log(dob);
     }
 
 
