@@ -39,6 +39,8 @@ export default function TourTable(props) {
     const { columnsData, tableData } = props;
     const [currentId, setCurrentId] = useState(null);
 
+    const {TextArea} = Input;
+
     const columns = useMemo(() => columnsData, [columnsData]);
     const data = useMemo(() => tableData, [tableData]);
     const dispatch = useDispatch();
@@ -72,6 +74,7 @@ export default function TourTable(props) {
     const [tourChecked, setTourChecked] = React.useState(null)
     const [open, setOpen] = useState(false);
     const [isOpenAddForm, setIsOpenAddForm] = useState(false);
+    const [rejectReason, setRejectReason] = useState('');
     const showModal = () => {
         setOpen(true);
     };
@@ -118,6 +121,10 @@ export default function TourTable(props) {
 
     }
 
+    const handleChangeReason = (e) => {
+        setRejectReason(e.target.value);
+    }
+
     const handleClickInspect = () => {
      if (tourChecked !== null) showModal();
     }
@@ -129,17 +136,17 @@ export default function TourTable(props) {
     const handleClickReject = () => {
         if (tourChecked) {
             Modal.confirm({
-                title: 'Xác nhân',
+                title: 'Xác nhận hủy tour',
                 icon: <ExclamationCircleOutlined />,
-                content: 'Bạn có chắc chắc muốn hủy tour này ?',
+                content: <>Lý do <br/> <TextArea rows={4} placeholder="Nhập lý do..." maxLength={256} onChange={(e) => handleChangeReason(e)}/></>,
                 okText: 'Chấp nhận',
                 cancelText: 'Hủy',
                 onOk: async () => {
                     try {
-                        await dispatch(rejectTour(tourChecked));
+                        await dispatch(rejectTour(tourChecked, rejectReason));
                         Swal.fire(
                             'Thành công!',
-                            'Bạn đã xóa user này!',
+                            'Bạn đã hủy tour này!',
                             'success'
                         )
                     }

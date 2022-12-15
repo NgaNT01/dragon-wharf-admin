@@ -30,8 +30,8 @@ export const addNewTour = createAsyncThunk('/tours/addNewTour',async (payload) =
     return response.data.data;
 })
 
-export const rejectTour = createAsyncThunk('tours/rejectTour',async (payload) => {
-    const response = await tourApi.rejectTour(payload);
+export const rejectTour = createAsyncThunk('tours/rejectTour',async (id,payload) => {
+    const response = await tourApi.rejectTour(id,payload);
     return response.data.data;
 })
 

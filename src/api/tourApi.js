@@ -17,9 +17,9 @@ const tourApi = {
         const url = `/tour/add`;
         return axiosClient.post(url,payload);
     },
-    rejectTour: (id) => {
+    rejectTour: (id, payload) => {
         const url = `/tour/reject/${id}`;
-        return axiosClient.put(url);
+        return axiosClient.put(url,payload);
     }
 
 }
